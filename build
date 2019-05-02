@@ -1,0 +1,17 @@
+#!/usr/bin/env bash
+
+mkdir -p dist
+
+for name in anikit ldCover ldLoader choosefont.js ldBtn ldEditor ldPalettePicker ldQuery ldcp ldif ldui
+do
+  echo "update $name ..."
+  mkdir -p dist/$name/
+  rm -rf dist/$name/latest/
+  if [ "$1" = "-s" ]; then
+    ln -s ../$name/dist/ dist/$name/latest
+  else
+    mkdir -p dist/$name/latest/
+    cp -R ../$name/dist/* dist/$name/latest/
+  fi
+done
+
