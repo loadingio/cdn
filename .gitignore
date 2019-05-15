@@ -1,3 +1,5 @@
 dist
 node_modules
 .*.swp
+!dist/bootstrap/**/*
+!dist/bootstrap.native/**/*
